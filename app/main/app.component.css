@@ -1,5 +1,13 @@
-.header {
-	height: 40px;
+.media-app-header {
+	height: 80px;
 	background-color: black;
-	color: wheat;
+}
+
+.media-app-header .header-text {
+	color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    padding: 2px;
+    display: inline-block;
+    margin-top: 21px;
 }

@@ -1,0 +1,8 @@
+<div class="concepts-sentences-container">
+	<div *ngFor="let concept of concepts">
+			<span>{{concept.name}}</span>
+			<ul *ngFor="let s of concept.sentences">
+				<li>{{s.sentence}}</li>
+			</ul>
+	</div>
+</div>

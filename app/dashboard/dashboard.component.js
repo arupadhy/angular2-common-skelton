@@ -10,20 +10,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var dashboard_service_1 = require('./dashboard.service');
+// class BudgetCircle {
+// 	private context: CanvasRenderingContext2D;
+// 	private canvas: HTMLCanvasElement;
+// 	public drawBudgetDistribution() {
+// 	}
+// 	constructor(private x: number, private y: number,
+// 		private radius: number, private color: string = 'red', private width: number = 10) {
+// 	}
+// }
 var DashboardComponent = (function () {
-    function DashboardComponent(_router) {
+    //private budgetCircle: BudgetCircle = new BudgetCircle(0,0,200);
+    // @ViewChild("test") canvas;
+    function DashboardComponent(_router, _dashboardService) {
         this._router = _router;
+        this._dashboardService = _dashboardService;
     }
-    DashboardComponent.prototype.register = function () {
-        this._router.navigate(['register']);
+    DashboardComponent.prototype.createMediaPlan = function () {
+        this._router.navigate(['mediaplan']);
+    };
+    //No need to be fancy for now
+    // ngAfterViewInit() {
+    // 	console.log(this.canvas);
+    // }
+    DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._dashboardService.getClientBriefData().subscribe(function (data) { return _this.clientBriefs = data; }, function (error) { return console.log(error); }, function () { return console.log("client brief data obtained"); });
     };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'dashboard-app',
             templateUrl: 'app/dashboard/dashboard.component.html',
-            styleUrls: ['app/dashboard/dashboard.component.css']
+            styleUrls: ['app/dashboard/dashboard.component.css'],
+            providers: [dashboard_service_1.DashboardService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, dashboard_service_1.DashboardService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

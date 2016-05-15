@@ -1,5 +1,29 @@
-<div>
-	This is dashboard component
+<div *ngFor="let clientBrief of clientBriefs;let i = index" class="client-brief-container">
+	
+	<div class="client-brief-header">
+		<span class="client-name"> {{clientBrief.client}}</span>
+		<span class="media-plan-action">
+			<i class="add-plan-icon"></i><span (click)="createMediaPlan()">Create Media Plan</span>
+			<i class="edit-plan-icon"></i><span>Edit Media Plan</span>
+		</span>
+	</div>
 
-	<button (click)="register()">Register</button>
+	<div class="client-brief-content">
+		
+		<div class="client-brief-data">
+			<h4>{{clientBrief.headline}}</h4>
+			<span>{{clientBrief.description}}</span>
+		</div>
+		<div class="budget-distribution">
+			<!-- <canvas width="300" height="200"></canvas> -->
+			<h4>Total Budget: {{clientBrief.budget.total}}</h4>
+			<h4>Used: {{clientBrief.budget.used}}</h4>
+			<h4>Available: {{clientBrief.budget.available}}</h4>
+		</div>
+		<div class="client-brief-image">
+			
+		</div>
+		<div class="clear"></div>
+
+	</div>
 </div>

@@ -1,0 +1,79 @@
+.client-brief-container{
+	border-bottom: 1px solid black;
+	padding: 10px;
+}
+
+.client-brief-header{
+	margin-top: 40px;
+}
+
+.client-brief-header .client-name {
+	font-size: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+
+.client-brief-header .media-plan-action {
+	font-size: 12px;
+}
+
+.media-plan-action .add-plan-icon {
+	display: inline-block;
+	height: 12px;
+	width: 16px;
+	margin-left: 5px;
+	background-image:  url('/ui-sprite-icons.png');
+	background-position: -97px -210px;
+}
+
+.media-plan-action .edit-plan-icon {
+	display: inline-block;
+	height: 12px;
+	width: 16px;
+	background-image:  url('/ui-sprite-icons.png');
+	background-position: -66px -113px;
+}
+
+.media-plan-action span {
+	margin-right: 8px;
+	padding: 0.5px;
+}
+
+.media-plan-action span:hover {
+	color: orange;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.client-brief-content .client-brief-data{
+	width: 50%;
+	float:left;
+	background-color: grey;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+.client-brief-content .budget-distribution {
+	width: 40%;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+.budget-distribution h4 {
+	display: inline;
+	margin-right: 5px;
+	padding: 2px;
+}
+
+.client-brief-content .client-brief-image{
+	width: 20%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+

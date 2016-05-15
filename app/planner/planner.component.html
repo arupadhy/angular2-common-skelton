@@ -1,0 +1,97 @@
+<form class="create-media-app">
+
+    <div [ngClass]="{active:!planInput.show}" class="text-field">
+          <p>What is the name of your campaign?
+           </p>
+        <input id ="campaignNameInput" [(ngModel)]="planInput.planName" type="text" (keyup)="enableProductInput()" autofocus="autofocus">
+        <i [ngClass]="{active:!planInput.next}" (click)="takeProductInput()" class="next-icon">
+        </i>
+    </div>
+    
+    <div  [ngClass]="{active:!productInput.show}" class="product-input">
+        
+        <div>
+            <p>What product is this for?
+            </p>
+            <input id="productInputId" [(ngModel)]="productInput.productName" type="text" (keyup)="enableAudienceInput()" autofocus="autofocus">
+             <i [ngClass]="{active:!productInput.next}" class="next-icon" (click)="takeAudienceInput()">
+             </i>
+            
+        </div>
+    </div>
+    
+     <div [ngClass]="{active:!audienceInput.show}" class="audience-input">
+        <div>
+            <p>Who are the people you are trying to reach?
+            </p>
+              <input id="audienceInputId" [(ngModel)]="audienceInput.name" type="text" (keyup)="enableBusinessObjectiveInput()" autofocus="autofocus">
+             <i [ngClass]="{active:!audienceInput.next}" class="next-icon" (click)="takeBusinessObjectiveInput()">
+             </i>
+        </div>
+    </div>
+    
+    <div  [ngClass]="{active:!businessObjectiveInput.show}" class="business-objective">
+        <div>
+            <p>What are the business Objectives?   
+            </p>
+            <input id="businessObjectiveInputId" [(ngModel)]="businessObjectiveInput.name" type="text" (keyup)="enableKpiMeasureInput()" autofocus="autofocus">
+             <i [ngClass]="{active:!businessObjectiveInput.next}" class="next-icon" (click)="takeKpiToMeasureInput()">
+             </i>
+            
+        </div>
+    </div>
+    
+    <div [ngClass]="{active:!kpiToMeasureInput.show}" class="kpi-to-measure">
+        <div>
+            <p>What are the KPI's to measure?
+            </p>
+            <input id="kpiToMeasureInputId" [(ngModel)]="kpiToMeasureInput.name" type="text" (keyup)="enableFinalNext()" autofocus="autofocus">
+             <i [ngClass]="{active:!kpiToMeasureInput.next}" class="next-icon" (click)="getCycConcepts()">
+             </i>
+        </div>
+    </div>
+
+    <!-- For now don't show the inputs entered untill design is finalized -->
+    <div [ngClass]="{active:!showUserInputs}" class="added-details-so-far">
+      <div>
+        <div *ngIf="planInput.planName">
+            <h4>Campaign Name:</h4>
+            <span>{{planInput.planName}}</span>
+         </div>
+        <div *ngIf="productInput.productName">
+            <h4>Product:</h4>
+            <span >{{productInput.productName}}</span>
+        </div>
+      </div>
+
+      <div *ngIf="audienceInput.name">
+           <h4>TargetAudience:</h4>
+        <ul *ngFor="let audience of getSelectedTargetAudience()">
+          <li>
+             <span>{{audience}}</span> 
+          </li>
+        </ul>
+       </div>
+
+      <div *ngIf="businessObjectiveInput.name">
+          <h4>Business Objectives:</h4>
+          <ul *ngFor="let objective of getSelectedBusinessObjectives()">
+            <li>
+              <span>{{objective}}</span>
+            </li>
+          </ul>
+       </div>
+
+      <div *ngIf="kpiToMeasureInput.name">
+          <h4>KPIs</h4>
+          <ul *ngFor="let kpi of getSelectedKpis()">
+            <li>
+              <span>{{kpi}}</span>
+            </li>
+          </ul>
+      </div>
+      <button (click)="loadCycConcepts()">GetCycRecommendation</button>
+    </div>
+    
+    
+</form>

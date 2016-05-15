@@ -9,18 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var RegisterComponent = (function () {
-    function RegisterComponent() {
+var concepts_service_1 = require('./concepts.service');
+var ConceptsComponent = (function () {
+    function ConceptsComponent(conceptService) {
+        this.conceptService = conceptService;
     }
-    RegisterComponent = __decorate([
+    ConceptsComponent.prototype.ngOnInit = function () {
+        this.concepts = this.conceptService.getRecommendations();
+        console.log(this.concepts);
+    };
+    ConceptsComponent = __decorate([
         core_1.Component({
-            selector: 'register-app',
-            templateUrl: 'app/register/register.component.html',
-            styleUrls: ['app/register/register.component.css']
+            selector: 'cyc-concepts',
+            templateUrl: 'app/concepts/concepts.component.html',
+            styleUrls: ['app/concepts/concepts.component.css'],
+            providers: [concepts_service_1.ConceptService]
         }), 
-        __metadata('design:paramtypes', [])
-    ], RegisterComponent);
-    return RegisterComponent;
+        __metadata('design:paramtypes', [concepts_service_1.ConceptService])
+    ], ConceptsComponent);
+    return ConceptsComponent;
 }());
-exports.RegisterComponent = RegisterComponent;
-//# sourceMappingURL=register.component.js.map
+exports.ConceptsComponent = ConceptsComponent;
+//# sourceMappingURL=concepts.component.js.map

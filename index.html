@@ -1,10 +1,18 @@
 <html>
   <head>
     <base href="/">
-    <title>Angular 2 QuickStart</title>
+    <title>Media Planner</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="normalize.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!-- 1. Load libraries -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <!-- 1. Load libraries -->
      <!-- Polyfill(s) for older browsers -->
@@ -13,7 +21,7 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-     <script src="node_modules/systemjs/dist/http-devsrc.js"></script>
+    <script src="node_modules/systemjs/dist/http-devsrc.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>

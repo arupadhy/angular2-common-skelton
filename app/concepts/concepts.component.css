@@ -1,0 +1,17 @@
+.concepts-sentences-container {
+	background-color: #222;
+}
+
+.concepts-sentences-container div {
+	border: 1px solid white;
+	margin-bottom: 5px;
+	width: 50%;
+}
+
+.concepts-sentences-container li {
+	color: white;
+}
+
+.concepts-sentences-container span {
+	color: wheat;
+}

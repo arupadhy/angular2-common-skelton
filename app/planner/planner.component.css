@@ -1,0 +1,82 @@
+ form{
+    background-color: #222;
+    height: 100%;
+    margin:0;
+ }
+
+ .next-icon {
+    display: inline-block;
+    height: 12px;
+    width: 16px;
+    margin-left: 5px;
+    background-image: url('/ui-sprite-icons.png');
+    background-position: -48px -50px;
+    position: relative;
+    top: 8px;
+    border-radius: 3px;
+}
+
+#token-input-audienceInputId{
+    width: 674px;
+}
+
+.next-icon:hover {
+    border: 1px solid blue;
+    cursor: pointer;
+}
+.added-details-so-far {
+    margin-bottom: 5px;
+}
+
+.added-details-so-far h4 {
+    display: inline-block;
+    color: #aaa;
+}
+
+ .added-details-so-far h3 {
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+ }
+ 
+ .added-details-so-far .campaign-name-input {
+    color: wheat;
+    font-size: 33px;
+    margin-left: 36px;
+ }
+
+  .added-details-so-far .product-name-input {
+    color: wheat;
+    font-size: 15px;
+    margin-left: 36px;
+ }
+ 
+ .active {
+     display: none;
+ }
+ 
+ .text-field,.product-input,.audience-input,.business-objective,.kpi-to-measure {
+     margin-left: 20%;
+     padding-top: 8%;
+ }
+ 
+ .text-field input, .product-input input,.audience-input input,.business-objective input,.kpi-to-measure input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid white;
+    width: 674px;
+    color:white;
+    margin-bottom: 2px;
+    overflow: auto;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+ .text-field p,.product-input p,.audience-input p,.business-objective p,.kpi-to-measure p {
+     color: #aaa;
+     font-size: 35px;
+     margin-top: -2px;
+ }
