@@ -46,11 +46,14 @@
 	cursor: pointer;
 	text-decoration: underline;
 }
+.client-brief-content {
+	background-color: rgb(245, 245, 245);
+}
 
 .client-brief-content .client-brief-data{
 	width: 50%;
 	float:left;
-	background-color: grey;
+	background-color: rgba(158, 158, 158, 0.15);
 	border-radius: 5px;
 	padding: 2px;
 }
